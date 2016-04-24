@@ -17,19 +17,19 @@ public class moveplayer : MonoBehaviour {
         {            
             if (Input.GetKey(KeyCode.W))
             {
-                this.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up);
+                this.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * Time.deltaTime);
             }
             if (Input.GetKey(KeyCode.A))
             {
-                this.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.left);
+                this.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.left * Time.deltaTime);
             }
             if (Input.GetKey(KeyCode.D))
             {
-                this.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.right);
+                this.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.right * Time.deltaTime);
             }
             if (Input.GetKey(KeyCode.S))
             {
-                this.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.down);
+                this.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.down * Time.deltaTime);
             }
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = 5.23f;

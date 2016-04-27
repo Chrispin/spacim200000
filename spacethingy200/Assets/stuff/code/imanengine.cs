@@ -17,6 +17,7 @@ public class imanengine : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 	if(move == true)
         {
             this.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * 100 * Time.deltaTime);
@@ -24,6 +25,7 @@ public class imanengine : MonoBehaviour {
         }
         move = false;
 	}
+    
     public void moveforwards(char lettr)
     {
         if (letter == lettr)

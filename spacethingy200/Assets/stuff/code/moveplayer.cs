@@ -2,17 +2,16 @@
 using System.Collections;
 
 public class moveplayer : MonoBehaviour {
+    public bool isdriving;
+    public bool isgunner;
+    public bool isengineer;
 
-
-	// Use this for initialization
 	void Start () {
 	
 	}
 
-    // Update is called once per frame
     void Update()
     {
-
         if (!this.GetComponentInParent<moveengines>().isdriving)
         {            
             if (Input.GetKey(KeyCode.W))

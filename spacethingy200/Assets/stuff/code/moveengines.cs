@@ -5,6 +5,8 @@ public class moveengines : MonoBehaviour {
     public GameObject commandconsole;
     public bool isdriving = true;
     Rigidbody2D pilot;
+    public float pilotconsoledistante;
+    public GameObject currentpilot;
 	// Use this for initialization
 	void Start () {
         stopdriving();
@@ -12,9 +14,11 @@ public class moveengines : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        /*
         if (Input.GetKeyUp(KeyCode.E))
-        {
-            if (Vector3.Distance(commandconsole.GetComponent<Transform>().position, this.GetComponent<Transform>().position) < 100)
+        {                       
+            //Vector3 objectPoss = Camera.main.WorldToScreenPoint(transform.position);
+            if (Vector3.Distance(commandconsole.GetComponent<Transform>().position, currentpilot.GetComponent<Transform>().position) < pilotconsoledistante)
             {
                 isdriving = !isdriving;
                 if(isdriving == true)
@@ -27,7 +31,7 @@ public class moveengines : MonoBehaviour {
                 }
             }
         }
-        if (isdriving)
+        if (false)//isdriving
         {
             pilot.GetComponent<Transform>().localRotation = new Quaternion(0, 0, 0, 0);
             pilot.GetComponent<Transform>().localPosition = new Vector2(0, 0);
@@ -61,6 +65,7 @@ public class moveengines : MonoBehaviour {
             }
         }
 
+        */
     }
     public void startdriving()
     {
@@ -77,6 +82,7 @@ public class moveengines : MonoBehaviour {
                 //child.freezeRotation = false;
                 child.GetComponent<Transform>().localRotation = new Quaternion(0, 0, 0, 0);
                 child.GetComponent<Transform>().localPosition = new Vector2(0, 0);
+                
                 /*
                 child.gameObject.AddComponent<FixedJoint2D>();
                 child.gameObject.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
